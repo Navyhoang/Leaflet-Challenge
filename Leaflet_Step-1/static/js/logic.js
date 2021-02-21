@@ -120,26 +120,5 @@ function createMap(earthquakes) {
     collapsed: false
     }).addTo(myMap);
 
-    // Set up the legend
-    // var legend = L.control({ position: "bottomright" });
-    // legend.onAdd = function() {
-    // var div = L.DomUtil.create("div", "info legend");
-    // var limits = geojson.options.limits;
-    // var colors = geojson.options.colors;
-    // var labels = [];
-
-
-    // div.innerHTML = legendInfo;
-
-    // limits.forEach(function(limit, index) {
-    //     labels.push("<li style=\"background-color: " + colors[index] + "\"></li>");
-    // });
-
-    // div.innerHTML += "<ul>" + labels.join("") + "</ul>";
-    // return div;
-    // };
-
-    // // Adding legend to the map
-    // legend.addTo(myMap);
-
+    
 }
