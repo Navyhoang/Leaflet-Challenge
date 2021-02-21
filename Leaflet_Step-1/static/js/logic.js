@@ -120,5 +120,16 @@ function createMap(earthquakes) {
     collapsed: false
     }).addTo(myMap);
 
+    legend.onAdd = function (color) {
+      var div = L.DomUtil.create('div', 'info legend');
+      var levels = ['-10-10','10-30','30-50','50-70','70-90','90+'];
+      var colors = ['#00ff00','#ccff00','#f8de7e','#ed9121','#ff4040','#b31b1b'];
+      for (var i=0; i < levels.length; i++) {
+        div.innerHTML += '<i style="background:' + colors[i] + '"></i>' + levels[i] + '<br>';
+      }
+      return div;
+    }
+
+    legend.addTo(myMap);
     
 }
