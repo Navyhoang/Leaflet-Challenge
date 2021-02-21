@@ -116,17 +116,26 @@ function createMap(earthquakes) {
     // Create a layer control
     // Pass in our baseMaps and overlayMaps
     // Add the layer control to the map
+
     L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
     }).addTo(myMap);
 
+    // Add legend to the bottom right of the map by hard coding the colors and change CSS
+
+    var legend = L.control({position: "bottomright"});
+
     legend.onAdd = function (color) {
+
       var div = L.DomUtil.create('div', 'info legend');
-      var levels = ['-10-10','10-30','30-50','50-70','70-90','90+'];
+
+      var ranges = ['-10-10','10-30','30-50','50-70','70-90','90+'];
       var colors = ['#00ff00','#ccff00','#f8de7e','#ed9121','#ff4040','#b31b1b'];
-      for (var i=0; i < levels.length; i++) {
-        div.innerHTML += '<i style="background:' + colors[i] + '"></i>' + levels[i] + '<br>';
+
+      for (var i=0; i < ranges.length; i++) {
+        div.innerHTML += '<i style="background:' + colors[i] + '"></i>' + ranges[i] + '<br>';
       }
+
       return div;
     }
 
